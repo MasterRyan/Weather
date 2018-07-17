@@ -1,0 +1,16 @@
+
+platform :ios, '11.0'
+
+target 'CloudWeather' do
+
+  use_frameworks!
+
+  pod 'lottie-ios', '~> 2.5.0'
+  pod 'SwiftLint' , '~> 0.26.0'
+
+  target 'CloudWeatherTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
