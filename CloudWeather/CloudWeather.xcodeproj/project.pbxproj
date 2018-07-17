@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24469FB720FD7AE50013B2C7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24469FB620FD7AE50013B2C7 /* DashboardViewController.swift */; };
 		24A1444D20FD35FF0030FA7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1444C20FD35FF0030FA7D /* AppDelegate.swift */; };
 		24A1444F20FD35FF0030FA7D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1444E20FD35FF0030FA7D /* LoadingViewController.swift */; };
 		24A1445220FD35FF0030FA7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A1445020FD35FF0030FA7D /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		24A1445720FD36010030FA7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A1445520FD36010030FA7D /* LaunchScreen.storyboard */; };
 		24A1446220FD36010030FA7D /* CloudWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1446120FD36010030FA7D /* CloudWeatherTests.swift */; };
 		24A1446D20FD37E00030FA7D /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1446C20FD37E00030FA7D /* WeatherManager.swift */; };
+		24A1447220FD6F6B0030FA7D /* DashboardDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1447120FD6F6B0030FA7D /* DashboardDataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24469FB620FD7AE50013B2C7 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		24A1444920FD35FF0030FA7D /* CloudWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A1444C20FD35FF0030FA7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24A1444E20FD35FF0030FA7D /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		24A1446120FD36010030FA7D /* CloudWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudWeatherTests.swift; sourceTree = "<group>"; };
 		24A1446320FD36010030FA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24A1446C20FD37E00030FA7D /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		24A1447120FD6F6B0030FA7D /* DashboardDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24469FB520FD7A960013B2C7 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				24A1447120FD6F6B0030FA7D /* DashboardDataController.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
 		24A1444020FD35FF0030FA7D = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +130,9 @@
 		24A1447020FD6B420030FA7D /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				24469FB520FD7A960013B2C7 /* data */,
 				24A1444E20FD35FF0030FA7D /* LoadingViewController.swift */,
+				24469FB620FD7AE50013B2C7 /* DashboardViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -226,7 +240,9 @@
 			files = (
 				24A1446D20FD37E00030FA7D /* WeatherManager.swift in Sources */,
 				24A1444F20FD35FF0030FA7D /* LoadingViewController.swift in Sources */,
+				24469FB720FD7AE50013B2C7 /* DashboardViewController.swift in Sources */,
 				24A1444D20FD35FF0030FA7D /* AppDelegate.swift in Sources */,
+				24A1447220FD6F6B0030FA7D /* DashboardDataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
