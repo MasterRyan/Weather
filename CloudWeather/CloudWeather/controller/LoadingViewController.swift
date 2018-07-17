@@ -14,8 +14,13 @@ class LoadingViewController: UIViewController {
         super.viewDidLoad()
 
         //TODO Pre Cache if time
+        //simulate precash with delay
+        perform(#selector(self.moveToDash), with: nil, afterDelay: 10)
     }
 
+    @objc func moveToDash() {
+        performSegue(withIdentifier: "LOADING_TO_DASH_SEGUE", sender: nil)
+    }
 
 }
 
