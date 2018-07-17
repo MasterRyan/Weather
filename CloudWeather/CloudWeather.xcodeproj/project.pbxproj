@@ -83,12 +83,8 @@
 				24A1446F20FD6B350030FA7D /* view */,
 				24A1446E20FD6B290030FA7D /* model */,
 				24A1444C20FD35FF0030FA7D /* AppDelegate.swift */,
-				24A1444E20FD35FF0030FA7D /* LoadingViewController.swift */,
-				24A1445020FD35FF0030FA7D /* Main.storyboard */,
 				24A1445320FD36010030FA7D /* Assets.xcassets */,
-				24A1445520FD36010030FA7D /* LaunchScreen.storyboard */,
 				24A1445820FD36010030FA7D /* Info.plist */,
-				24A1446C20FD37E00030FA7D /* WeatherManager.swift */,
 			);
 			path = CloudWeather;
 			sourceTree = "<group>";
@@ -105,6 +101,7 @@
 		24A1446E20FD6B290030FA7D /* model */ = {
 			isa = PBXGroup;
 			children = (
+				24A1446C20FD37E00030FA7D /* WeatherManager.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -112,6 +109,8 @@
 		24A1446F20FD6B350030FA7D /* view */ = {
 			isa = PBXGroup;
 			children = (
+				24A1445520FD36010030FA7D /* LaunchScreen.storyboard */,
+				24A1445020FD35FF0030FA7D /* Main.storyboard */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -119,6 +118,7 @@
 		24A1447020FD6B420030FA7D /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				24A1444E20FD35FF0030FA7D /* LoadingViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
