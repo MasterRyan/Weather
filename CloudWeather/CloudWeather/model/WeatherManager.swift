@@ -6,7 +6,7 @@
 //  Copyright © 2018 Ryan. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //TODO add Cache for offline support if have time.
 
@@ -27,6 +27,10 @@ class WeatherManager: NSObject {
         let lon: Double!
     }
 
+    struct MainData: Decodable {
+        let temp: Double!
+    }
+
     struct WeatherItem: Decodable {
         let shortDescription: String!
         let fullDescription: String!
@@ -42,10 +46,12 @@ class WeatherManager: NSObject {
     struct Weather: Decodable {
         let coord: Coord!
         let dataArray: [WeatherItem]!
+        let main: MainData!
 
         private enum CodingKeys: String, CodingKey {
             case coord
             case dataArray = "weather"
+            case main
         }
     }
 
@@ -56,11 +62,47 @@ class WeatherManager: NSObject {
     struct ForecastItem: Decodable {
         let datetime: TimeInterval!
         let dataArray: [WeatherItem]!
+        let main: MainData!
 
         private enum CodingKeys: String, CodingKey {
             case datetime = "dt"
             case dataArray = "weather"
+            case main
         }
+    }
+
+    static func loadImage(_ imageId: String, completionHandler: @escaping (UIImage?, Error?) -> Void)  {
+        guard let url = URL(string: "http://openweathermap.org/img/w/"+imageId+".png") else {
+            completionHandler(nil, WeatherManagerError.netWorkError("invalid image URL"))
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    completionHandler(nil, error)
+                    return
+                }
+            }
+
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                DispatchQueue.main.async {
+                    completionHandler(nil, WeatherManagerError.netWorkError("response code = \(response.statusCode)"))
+                }
+                return
+            }
+
+            guard let data = data, let image = UIImage(data: data) else {
+                DispatchQueue.main.async {
+                    completionHandler(nil, WeatherManagerError.netWorkError("invalid image data"))
+
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                completionHandler(image, nil)
+            }
+
+        }.resume()
     }
 
     static func fivedayForcast(_ completionHandler: @escaping (Forecast?, Error?) -> Void) {
@@ -115,16 +157,16 @@ class WeatherManager: NSObject {
 
         guard let url = urlComps?.url else { return } //TODO call compHandler with error
 
-        let task = URLSession.shared.dataTask(with: url) { (data, responce, error) in
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completionHandler(nil, error)
                 return
             }
-            if let responce = responce as? HTTPURLResponse, responce.statusCode != 200 {
-                completionHandler(nil, WeatherManagerError.netWorkError("responce code = \(responce.statusCode)"))
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                completionHandler(nil, WeatherManagerError.netWorkError("response code = \(response.statusCode)"))
                 return
             }
-            print(responce)
+            print(response)
 
             completionHandler(data, nil)
 
