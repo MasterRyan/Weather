@@ -12,11 +12,11 @@ import Foundation
 
 class WeatherManager: NSObject {
     
-    static let baseUrlString = "http://api.openweathermap.org/data/2.5/"
-    static let nowEndPoint = "weather"
-    static let fiveDayEndPoint = "forecast"
-    static let location = URLQueryItem(name: "q", value: "Manchester,UK")
-    static let apiKey = URLQueryItem(name: "APPID", value:"aa62179fbad60eba69a3f32fc4a6b8dc")
+    private static let baseUrlString = "http://api.openweathermap.org/data/2.5/"
+    private static let nowEndPoint = "weather"
+    private static let fiveDayEndPoint = "forecast"
+    private static let location = URLQueryItem(name: "q", value: "Manchester,UK")
+    private static let apiKey = URLQueryItem(name: "APPID", value:"aa62179fbad60eba69a3f32fc4a6b8dc")
     
     struct Coord: Decodable {
         let lat: Double!
