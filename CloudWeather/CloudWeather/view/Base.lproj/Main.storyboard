@@ -218,6 +218,10 @@
                     <navigationItem key="navigationItem" id="c1O-Jc-ckc"/>
                     <connections>
                         <outlet property="fiveDayCollectionView" destination="zc0-ey-Bif" id="RNb-qh-iSl"/>
+                        <outlet property="iconImgView" destination="I4Y-sv-2g7" id="pAt-Nu-8iZ"/>
+                        <outlet property="longDescLbl" destination="qEy-sB-Nw3" id="5wX-3q-Zks"/>
+                        <outlet property="shortDecsLbl" destination="Mcl-sa-QJC" id="BWy-Aa-hVs"/>
+                        <outlet property="tempLbl" destination="1tP-iV-Znu" id="PPS-h6-xUZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hI7-x1-NgW" userLabel="First Responder" sceneMemberID="firstResponder"/>

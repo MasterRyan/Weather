@@ -10,14 +10,35 @@ import UIKit
 
 class DashboardViewController: DashboardDataController {
 
+    @IBOutlet weak var iconImgView: UIImageView!
+    @IBOutlet weak var tempLbl: UILabel!
     @IBOutlet weak var fiveDayCollectionView: UICollectionView!
+    @IBOutlet weak var shortDecsLbl: UILabel!
+    @IBOutlet weak var longDescLbl: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //fiveDayCollectionView
+    func updateMainInfo() {
+        guard let weatherInfo = currentWeather?.dataArray.first, let kelvin = currentWeather?.main.temp else { return }
+
+        loadIcon(weatherInfo.icon) // do it first to give it the extra clock cycles
+        shortDecsLbl.text = weatherInfo.shortDescription
+        longDescLbl.text = weatherInfo.fullDescription
+        tempLbl.text = "\(Int(kelvin-273.15))ºc"
+    }
+
+    func loadIcon(_ iconId: String) {
+        WeatherManager.loadImage(iconId) { (image, error) in
+            if let error = error {
+                self.display(error: error)
+                return
+            }
+            guard let image = image else { return }
+
+            self.iconImgView.image = image
+        }
     }
 
     override func refresh() {
+        updateMainInfo()
         fiveDayCollectionView.reloadData()
     }
 }

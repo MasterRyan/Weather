@@ -22,18 +22,27 @@ class SummeryCollectionViewCell: UICollectionViewCell {
 
         setupDateLabels(date)
 
-        guard let weatherItem = forecast.dataArray.last else { return }
-        setupTempLabel(weatherItem)
-        setupIcon(weatherItem)
+        guard let weatherItem = forecast.dataArray.first else { return }
+        setupTempLabel(forecast)
+        setupIcon(weatherItem.icon)
         typeDescLbl.text = weatherItem.shortDescription.capitalized
     }
 
-    func setupTempLabel(_: WeatherManager.WeatherItem) {
-        //need to capture temp in feed
+    func setupTempLabel(_ itemData: WeatherManager.ForecastItem) {
+        guard let kelvin = itemData.main.temp else { return }
+        tempLbl.text = "\(Int(kelvin-273.15))ºc"
     }
 
-    func setupIcon(_: WeatherManager.WeatherItem) {
-        //need to add icon loader
+    func setupIcon(_ iconId: String) {
+        WeatherManager.loadImage(iconId) { (image, error) in
+            if error != nil {
+                self.iconImgView.image = nil
+                return
+            }
+            guard let image = image else { return }
+
+            self.iconImgView.image = image
+        }
     }
 
     func setupDateLabels(_ date: Date) {
