@@ -9,13 +9,13 @@
 import UIKit
 
 class DashboardDataController: UIViewController {
-    
+
     var fiveDayData: WeatherManager.Forecast? {
         didSet {
             refresh()
         }
     }
-    var currentWeather: WeatherManager.Weather?{
+    var currentWeather: WeatherManager.Weather? {
         didSet {
             refresh()
         }
@@ -30,9 +30,9 @@ class DashboardDataController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     func reloadDataIfNeeded(force: Bool) {
-        
+
         WeatherManager.fivedayForcast { [unowned self](forecast, error) in
             if let error = error {
                 self.display(error: error)
@@ -40,7 +40,7 @@ class DashboardDataController: UIViewController {
             }
             self.fiveDayData = forecast
         }
-        
+
         WeatherManager.forecastNow { [unowned self](forecast, error) in
             if let error = error {
                 self.display(error: error)
@@ -49,17 +49,17 @@ class DashboardDataController: UIViewController {
             self.currentWeather = forecast
         }
     }
-    
+
     func refresh() {
         //place holder for ui controller.
     }
-    
+
     func display(error: Error) {
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
+
     /*
     // MARK: - Navigation
 
