@@ -14,7 +14,7 @@ class LottieAnimationFile: AnimationFile {
 
     override var readyToPlay: Bool { return self.ready }
 
-    override func load(filePath: String, loaded: LoadedClosure ) {
+    override func load(filePath: String, owner: UIView, loaded: LoadedClosure ) {
         //setup and load
         ready = true
         loaded(true, nil)

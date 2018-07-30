@@ -18,7 +18,7 @@ public enum AnimationViewError: Error {
 class AnimationFile {
     var readyToPlay: Bool { assert(false, "should be sub-classed"); return false }
 
-    func load(filePath: String, loaded: LoadedClosure) {
+    func load(filePath: String, owner: UIView, loaded: LoadedClosure) {
         assert(false, "should be sub-classed")
         loaded(false, AnimationViewError.fileTypeError("abstract class used"))
     }
@@ -77,7 +77,7 @@ public class AnimationView: UIView {
         //search for lottie files (.json)
         if let filePath = bundle.path(forResource: fileName, ofType: "json") {
             animationFile = LottieAnimationFile()
-            animationFile?.load(filePath: filePath) { [unowned self] (success, _) in
+            animationFile?.load(filePath: filePath, owner: self) { [unowned self] (success, _) in
                 if success, self.autoPlay {
                     animationFile?.play()
                 }
@@ -89,7 +89,7 @@ public class AnimationView: UIView {
         for fileType in  ["mp4", "m4p", "mov"] {
             if let filePath = bundle.path(forResource: fileName, ofType: fileType) {
                 animationFile = MovieAnimationFile()
-                animationFile?.load(filePath: filePath) { [unowned self] (success, _) in
+                animationFile?.load(filePath: filePath, owner: self) { [unowned self] (success, _) in
                     if success, self.autoPlay {
                         animationFile?.play()
                     }
