@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		243DB86C210FB93B00BFAE49 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DB86B210FB93B00BFAE49 /* AnimationView.swift */; };
+		243DB86F210FC7B700BFAE49 /* LottieAnimationFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DB86E210FC7B700BFAE49 /* LottieAnimationFile.swift */; };
+		243DB871210FCEEF00BFAE49 /* MovieAnimationFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DB870210FCEEF00BFAE49 /* MovieAnimationFile.swift */; };
 		24469FB720FD7AE50013B2C7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24469FB620FD7AE50013B2C7 /* DashboardViewController.swift */; };
 		24469FBA20FD9E600013B2C7 /* SummeryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24469FB920FD9E600013B2C7 /* SummeryCollectionViewCell.swift */; };
 		24A1444D20FD35FF0030FA7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1444C20FD35FF0030FA7D /* AppDelegate.swift */; };
@@ -36,6 +38,8 @@
 		0208E5DFB94D076815066F02 /* Pods-CloudWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudWeather/Pods-CloudWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		131E3BBDC2C689B004738862 /* Pods_CloudWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		243DB86B210FB93B00BFAE49 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		243DB86E210FC7B700BFAE49 /* LottieAnimationFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationFile.swift; sourceTree = "<group>"; };
+		243DB870210FCEEF00BFAE49 /* MovieAnimationFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieAnimationFile.swift; sourceTree = "<group>"; };
 		24469FB620FD7AE50013B2C7 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		24469FB920FD9E600013B2C7 /* SummeryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummeryCollectionViewCell.swift; sourceTree = "<group>"; };
 		24A1444920FD35FF0030FA7D /* CloudWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,26 +83,36 @@
 		243DB866210FB88B00BFAE49 /* dev pods */ = {
 			isa = PBXGroup;
 			children = (
-				243DB869210FB8F300BFAE49 /* UIPod */,
+				243DB869210FB8F300BFAE49 /* UI Pod */,
 			);
 			name = "dev pods";
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		243DB869210FB8F300BFAE49 /* UIPod */ = {
+		243DB869210FB8F300BFAE49 /* UI Pod */ = {
 			isa = PBXGroup;
 			children = (
-				243DB86A210FB90200BFAE49 /* AnimationView */,
+				243DB86A210FB90200BFAE49 /* Animation View */,
 			);
-			path = UIPod;
+			path = "UI Pod";
 			sourceTree = "<group>";
 		};
-		243DB86A210FB90200BFAE49 /* AnimationView */ = {
+		243DB86A210FB90200BFAE49 /* Animation View */ = {
 			isa = PBXGroup;
 			children = (
+				243DB86D210FC74D00BFAE49 /* Animation Files */,
 				243DB86B210FB93B00BFAE49 /* AnimationView.swift */,
 			);
-			path = AnimationView;
+			path = "Animation View";
+			sourceTree = "<group>";
+		};
+		243DB86D210FC74D00BFAE49 /* Animation Files */ = {
+			isa = PBXGroup;
+			children = (
+				243DB870210FCEEF00BFAE49 /* MovieAnimationFile.swift */,
+				243DB86E210FC7B700BFAE49 /* LottieAnimationFile.swift */,
+			);
+			path = "Animation Files";
 			sourceTree = "<group>";
 		};
 		24469FB520FD7A960013B2C7 /* data */ = {
@@ -386,9 +400,11 @@
 			files = (
 				24A1446D20FD37E00030FA7D /* WeatherManager.swift in Sources */,
 				24A1444F20FD35FF0030FA7D /* LoadingViewController.swift in Sources */,
+				243DB871210FCEEF00BFAE49 /* MovieAnimationFile.swift in Sources */,
 				24469FB720FD7AE50013B2C7 /* DashboardViewController.swift in Sources */,
 				24A1444D20FD35FF0030FA7D /* AppDelegate.swift in Sources */,
 				243DB86C210FB93B00BFAE49 /* AnimationView.swift in Sources */,
+				243DB86F210FC7B700BFAE49 /* LottieAnimationFile.swift in Sources */,
 				24A1447220FD6F6B0030FA7D /* DashboardDataController.swift in Sources */,
 				24469FBA20FD9E600013B2C7 /* SummeryCollectionViewCell.swift in Sources */,
 			);
