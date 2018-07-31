@@ -21,6 +21,7 @@
 		24A1446D20FD37E00030FA7D /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1446C20FD37E00030FA7D /* WeatherManager.swift */; };
 		24A1447220FD6F6B0030FA7D /* DashboardDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1447120FD6F6B0030FA7D /* DashboardDataController.swift */; };
 		24AFE36E21100DEA00439A87 /* cloudsBackground.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 24AFE36D21100DEA00439A87 /* cloudsBackground.mp4 */; };
+		24AFE37021101BA400439A87 /* cloudLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = 24AFE36F21101BA400439A87 /* cloudLoader.json */; };
 		556C9EB8B0A4FEC3F4954A22 /* Pods_CloudWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B33D7C1D25D49D1C54EE47D /* Pods_CloudWeatherTests.framework */; };
 		898BDFB68EC42A0B794A0628 /* Pods_CloudWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 131E3BBDC2C689B004738862 /* Pods_CloudWeather.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		24A1446C20FD37E00030FA7D /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		24A1447120FD6F6B0030FA7D /* DashboardDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDataController.swift; sourceTree = "<group>"; };
 		24AFE36D21100DEA00439A87 /* cloudsBackground.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cloudsBackground.mp4; sourceTree = "<group>"; };
+		24AFE36F21101BA400439A87 /* cloudLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cloudLoader.json; sourceTree = "<group>"; };
 		3B33D7C1D25D49D1C54EE47D /* Pods_CloudWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBD6AD68B9BBD8FBAE162B3 /* Pods-CloudWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudWeather/Pods-CloudWeather.release.xcconfig"; sourceTree = "<group>"; };
 		BC5A44F7AD18ACA2C016C719 /* Pods-CloudWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudWeatherTests/Pods-CloudWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		24AFE36A21100A6500439A87 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				24AFE36F21101BA400439A87 /* cloudLoader.json */,
 				24AFE36D21100DEA00439A87 /* cloudsBackground.mp4 */,
 			);
 			path = assets;
@@ -321,6 +324,7 @@
 				24A1445720FD36010030FA7D /* LaunchScreen.storyboard in Resources */,
 				24AFE36E21100DEA00439A87 /* cloudsBackground.mp4 in Resources */,
 				24A1445420FD36010030FA7D /* Assets.xcassets in Resources */,
+				24AFE37021101BA400439A87 /* cloudLoader.json in Resources */,
 				24A1445220FD35FF0030FA7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

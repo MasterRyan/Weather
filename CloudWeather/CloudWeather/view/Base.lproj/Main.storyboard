@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8N-kQ-s5N" customClass="AnimationView" customModule="CloudWeather" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8N-kQ-s5N" userLabel="cloudes" customClass="AnimationView" customModule="CloudWeather" customModuleProvider="target">
                                 <rect key="frame" x="-406" y="0.0" width="1186" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -32,24 +32,43 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fileName" value="cloudsBackground"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fo5-WK-7Wd">
-                                <rect key="frame" x="16" y="323.5" width="343" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="T7W-em-iC9" userLabel="loading" customClass="AnimationView" customModule="CloudWeather" customModuleProvider="target">
+                                <rect key="frame" x="37" y="193.5" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="T7W-em-iC9" secondAttribute="height" multiplier="1:1" id="FlS-BN-bDQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="loop" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autoPlay" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fileName" value="cloudLoader"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCity Cloud" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogR-LL-e7G">
+                                <rect key="frame" x="87" y="353" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.18011042370870223" blue="0.9948193089196361" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.30866704109999998" green="1" blue="0.18923072490000001" alpha="0.38732394370000001" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ogR-LL-e7G" firstAttribute="centerX" secondItem="T7W-em-iC9" secondAttribute="centerX" id="0sv-wd-7Yl"/>
+                            <constraint firstItem="T7W-em-iC9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="9ny-Tn-XM3"/>
                             <constraint firstItem="s8N-kQ-s5N" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="JQg-8B-l5l"/>
-                            <constraint firstItem="fo5-WK-7Wd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xby-2T-dFJ"/>
-                            <constraint firstItem="fo5-WK-7Wd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="b0W-Bh-h4H"/>
+                            <constraint firstItem="ogR-LL-e7G" firstAttribute="centerY" secondItem="T7W-em-iC9" secondAttribute="centerY" multiplier="15:14" id="T4N-x3-Csy"/>
+                            <constraint firstItem="T7W-em-iC9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WXu-Cj-f6B"/>
+                            <constraint firstItem="T7W-em-iC9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="8:10" id="XRG-vA-gXi"/>
                             <constraint firstItem="s8N-kQ-s5N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cOp-Pf-Zae"/>
-                            <constraint firstItem="fo5-WK-7Wd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="css-t0-6YS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fo5-WK-7Wd" secondAttribute="trailing" constant="16" id="oZz-UT-9Tm"/>
+                            <constraint firstItem="ogR-LL-e7G" firstAttribute="width" secondItem="T7W-em-iC9" secondAttribute="width" multiplier="2:3" id="m9N-xn-vUQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="T7W-em-iC9" secondAttribute="trailing" constant="-780" id="mzN-vu-ULO"/>
                             <constraint firstItem="s8N-kQ-s5N" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vbc-oV-daR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mzN-vu-ULO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <segue destination="Z1h-tH-aKM" kind="show" identifier="MOVE_TO_APP_SEGUE" id="nf9-nb-lEz"/>
