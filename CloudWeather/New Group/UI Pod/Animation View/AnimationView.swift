@@ -16,6 +16,8 @@ public enum AnimationViewError: Error {
 
 //will be private when moved to framework
 class AnimationFile {
+    var loop = false;
+
     var readyToPlay: Bool { assert(false, "should be sub-classed"); return false }
 
     func load(filePath: String, owner: UIView, loaded: LoadedClosure) {
@@ -33,7 +35,12 @@ class AnimationFile {
 
 public class AnimationView: UIView {
 
-    @IBInspectable public var loop: Bool = false
+    @IBInspectable public var loop: Bool = false {
+        willSet {
+            animationFile?.loop = newValue;
+        }
+    }
+
     @IBInspectable public var fileName: String = "" {
         didSet {
             loadFile()
@@ -79,6 +86,7 @@ public class AnimationView: UIView {
         //search for lottie files (.json)
         if let filePath = bundle.path(forResource: fileName, ofType: "json") {
             animationFile = LottieAnimationFile()
+            animationFile?.loop = loop
             animationFile?.load(filePath: filePath, owner: self) { [unowned self] (success, _) in
                 if success, self.autoPlay {
                     animationFile?.play()
@@ -91,6 +99,7 @@ public class AnimationView: UIView {
         for fileType in  ["mp4", "m4p", "mov"] {
             if let filePath = bundle.path(forResource: fileName, ofType: fileType) {
                 animationFile = MovieAnimationFile()
+                animationFile?.loop = loop
                 animationFile?.load(filePath: filePath, owner: self) { [unowned self] (success, _) in
                     if success, self.autoPlay {
                         animationFile?.play()

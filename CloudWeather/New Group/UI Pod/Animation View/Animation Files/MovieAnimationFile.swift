@@ -20,6 +20,8 @@ class MovieAnimationFile: AnimationFile {
 
     var playing = false
 
+    var notificationHandle: Any?
+
     override func load(filePath: String, owner: UIView, loaded: LoadedClosure) {
         //create video
         let url = URL(fileURLWithPath: filePath)
@@ -30,9 +32,23 @@ class MovieAnimationFile: AnimationFile {
         videoLayer.frame = owner.bounds
         owner.layer.addSublayer(videoLayer)
 
+        notificationHandle = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime,
+                                                                    object: player.currentItem, queue: nil) { [weak self](_) in
+            if self?.loop ?? false { self?.stop(); self?.play(); return }
+            self?.stop()
+        }
+
         self.owner = owner
         ready = true
         loaded(true, nil)
+    }
+
+    deinit {
+        videoLayer.removeFromSuperlayer()
+        videoLayer.player = nil
+        if let handle = notificationHandle {
+            NotificationCenter.default.removeObserver(handle)
+        }
     }
 
     override func play() {
@@ -43,6 +59,7 @@ class MovieAnimationFile: AnimationFile {
 
     override func stop() {
         player.pause()
+        player.seek(to: CMTime(seconds: 0, preferredTimescale: 100))
         playing = false
     }
 
