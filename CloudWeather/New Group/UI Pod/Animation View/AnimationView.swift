@@ -27,6 +27,8 @@ class AnimationFile {
     func pause(auto: Bool = false) { assert(false, "should be sub-classed") }
     func stop() { assert(false, "should be sub-classed") }
 
+    func resize() { assert(false, "should be sub-classed") }
+
 }
 
 public class AnimationView: UIView {
@@ -97,5 +99,10 @@ public class AnimationView: UIView {
                 break
             }
         }
+    }
+
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        animationFile?.resize()
     }
 }

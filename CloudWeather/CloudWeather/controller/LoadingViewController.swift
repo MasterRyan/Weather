@@ -19,7 +19,7 @@ class LoadingViewController: UIViewController {
     }
 
     @objc func moveToDash() {
-        performSegue(withIdentifier: "MOVE_TO_APP_SEGUE", sender: nil)
+        //performSegue(withIdentifier: "MOVE_TO_APP_SEGUE", sender: nil)
     }
 
 }
